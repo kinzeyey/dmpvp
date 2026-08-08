@@ -133,7 +133,11 @@ def get_drawable_from_name(name):
         match.group("drawable")
     )
 
-    drawable += OFFSETS[prefix]
+    # WICHTIG:
+    # Die Datei liegt bereits im OUTPUT
+    # und enthält schon die finale Drawable ID.
+    #
+    # NICHT nochmal Offset addieren!
 
     return prefix, drawable
 
